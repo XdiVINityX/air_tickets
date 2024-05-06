@@ -76,4 +76,9 @@ abstract class DarkColorPalette {
   /// https://www.color-name.com/hex/F36E36
   static const Color chineseOrange = Color(0xFFF36E36);
 
+  /// Light Silver
+  ///
+  /// https://www.color-name.com/hex/F36E36
+  static const Color lightSilver= Color(0xFFD9D9D9);
+
 }

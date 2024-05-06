@@ -1,7 +1,12 @@
 import 'package:air_tickets/core/assets/res/svg_icons.dart';
 import 'package:air_tickets/core/assets/text/text_theme.dart';
 import 'package:air_tickets/core/colors/color_scheme.dart';
+import 'package:air_tickets/features/hotel/domain/bloc/hotel_bloc.dart';
+import 'package:air_tickets/features/hotel/presentation/view/hotel_view.dart';
+import 'package:air_tickets/features/tickets/domain/bloc/tickets_bloc.dart';
+import 'package:air_tickets/features/tickets/presentation/tickets_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppView extends StatefulWidget {
@@ -12,20 +17,6 @@ class AppView extends StatefulWidget {
 }
 
 class _AppViewState extends State<AppView> {
-  late int _selectedIndex;
-
-  @override
-  void initState() {
-    _selectedIndex = 0;
-    super.initState();
-  }
-
-  void _onItemPressed(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   ThemeData _darkTheme() => ThemeData(
         extensions: <ThemeExtension<dynamic>>[
           AppColorScheme.dark(),
@@ -38,22 +29,44 @@ class _AppViewState extends State<AppView> {
         title: 'Flutter Demo',
         theme: _darkTheme(),
         darkTheme: _darkTheme(),
-        home: HomeScreen(
-          selectedIndex: _selectedIndex,
-          onItemPressed: _onItemPressed,
-        ),
+        home: const HomeScreen(),
       );
 }
 
-class HomeScreen extends StatelessWidget {
-
+class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
-    required this.selectedIndex,
-    required this.onItemPressed,
   });
-  final int selectedIndex;
-  final void Function(int) onItemPressed;
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late int _selectedIndex;
+
+  void _onItemPressed(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  void initState() {
+    _selectedIndex = 0;
+    super.initState();
+  }
+
+  static final List<Widget> _widgetOptions = [
+    BlocProvider(
+      create: (context) => TicketsBloc(),
+      child: const TicketsView(),
+    ),
+    BlocProvider(
+      create: (context) => HotelBloc(),
+      child: const HotelView(),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +74,12 @@ class HomeScreen extends StatelessWidget {
     final textStyles = AppTextTheme.of(context);
     return Scaffold(
       backgroundColor: Colors.black,
-      body: const Center(),
+      body: SafeArea(
+        child: IndexedStack(
+          index: _selectedIndex,
+          children: _widgetOptions,
+        ),
+      ),
       bottomNavigationBar: Container(
         color: Colors.black,
         height: 54,
@@ -74,7 +92,7 @@ class HomeScreen extends StatelessWidget {
           selectedLabelStyle: textStyles.regular10_110,
           showUnselectedLabels: true,
           enableFeedback: false,
-          currentIndex: selectedIndex,
+          currentIndex: _selectedIndex,
           items: [
             BottomNavigationBarItem(
               icon: Padding(
@@ -122,7 +140,7 @@ class HomeScreen extends StatelessWidget {
               label: 'Профиль',
             ),
           ],
-          onTap: onItemPressed,
+          onTap: _onItemPressed,
         ),
       ),
     );

@@ -33,12 +33,13 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     required this.subtitle,
     required this.divider,
     required this.icons,
+    required this.primaryText,
   });
 
   AppColorScheme.dark()
-      : primary = DarkColorPalette.white,
+      : primary = DarkColorPalette.darkCharcoal,
         onPrimary = DarkColorPalette.white,
-        secondary = DarkColorPalette.white,
+        secondary = DarkColorPalette.arsenic,
         onSecondary = DarkColorPalette.white,
         surface = DarkColorPalette.white,
         surfaceSecondary = DarkColorPalette.white,
@@ -64,8 +65,9 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         skeletonTertiary = DarkColorPalette.white,
         tetradicBackground = DarkColorPalette.denim,
         subtitle = DarkColorPalette.denim,
-        divider = DarkColorPalette.white,
-        icons = DarkColorPalette.white;
+        divider = DarkColorPalette.graniteGray,
+        icons = DarkColorPalette.white,
+        primaryText = DarkColorPalette.white;
 
   final Color primary;
   final Color onPrimary;
@@ -97,6 +99,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
   final Color subtitle;
   final Color divider;
   final Color icons;
+  final Color primaryText;
 
   @override
   ThemeExtension<AppColorScheme> copyWith({
@@ -129,7 +132,8 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     Color? tetradicBackground,
     Color? subtitle,
     Color? divider,
-    Color? phone,
+    Color? icons,
+    Color? primaryText,
   }) =>
       AppColorScheme._(
         primary: primary ?? this.primary,
@@ -163,7 +167,8 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         tetradicBackground: tetradicBackground ?? this.tetradicBackground,
         subtitle: subtitle ?? this.subtitle,
         divider: divider ?? this.divider,
-        icons: phone ?? this.icons,
+        icons: icons ?? this.icons,
+        primaryText: primaryText ?? this.primaryText,
       );
 
   @override
@@ -217,6 +222,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       subtitle: Color.lerp(tetradicBackground, other.tetradicBackground, t)!,
       divider: Color.lerp(divider, other.divider, t)!,
       icons: Color.lerp(icons, other.icons, t)!,
+      primaryText: Color.lerp(primaryText, other.primaryText, t)!,
     );
   }
 
