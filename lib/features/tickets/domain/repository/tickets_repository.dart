@@ -1,5 +1,5 @@
-import 'package:air_tickets/features/tickets/data/dto/music_offer_dto.dart';
+import 'package:air_tickets/features/tickets/domain/entity/music_offer.dart';
 
 abstract interface class ITicketsRepository{
-  Future<List<MusicOfferDto>> getMusicOffer();
+  Future<MusicOffer> getMusicOffer();
 }

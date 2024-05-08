@@ -1,14 +1,39 @@
-import 'package:bloc/bloc.dart';
+import 'package:air_tickets/features/tickets/domain/entity/music_offer.dart';
+import 'package:air_tickets/features/tickets/domain/repository/tickets_repository.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'tickets_event.dart';
+
 part 'tickets_state.dart';
+
 part 'tickets_bloc.freezed.dart';
 
 class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
-  TicketsBloc() : super(const TicketsState.initial()) {
-    on<TicketsEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+  TicketsBloc({required ITicketsRepository repository})
+      : _repository = repository,
+        super(const TicketsState$Initial()) {
+    on<TicketsEvent>(
+      (event, emitter) => switch (event) {
+        final TicketsEvent$Initial event => _initial(emitter, event),
+        final TicketsEvent$Loading event => throw UnimplementedError(),
+      },
+    );
+  }
+
+  final ITicketsRepository _repository;
+
+  Future<void> _initial(
+    Emitter<TicketsState> emitter,
+    TicketsEvent event,
+  ) async {
+    try{
+      emitter(const TicketsState$Loading());
+      final data = await _repository.getMusicOffer();
+      emitter(TicketsState$loadingSuccess(offers: data.offers));
+    } on Object catch (e) {
+     emitter(TicketsState$Error(message: e.toString()));
+    }
   }
 }
+

@@ -1,10 +1,13 @@
 import 'package:air_tickets/core/assets/res/svg_icons.dart';
 import 'package:air_tickets/core/assets/text/text_theme.dart';
 import 'package:air_tickets/core/colors/color_scheme.dart';
+import 'package:air_tickets/core/network/app_api_provider.dart';
 import 'package:air_tickets/features/hotel/domain/bloc/hotel_bloc.dart';
 import 'package:air_tickets/features/hotel/presentation/view/hotel_view.dart';
+import 'package:air_tickets/features/tickets/data/repository/tickets_repository.dart';
 import 'package:air_tickets/features/tickets/domain/bloc/tickets_bloc.dart';
 import 'package:air_tickets/features/tickets/presentation/tickets_view.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static final List<Widget> _widgetOptions = [
     BlocProvider(
-      create: (context) => TicketsBloc(),
+      create: (context) => TicketsBloc(
+        repository: TicketsRepository(apiProvider: AppApiProvider(dio: Dio())),
+      )..add(const TicketsEvent$Initial()),
       child: const TicketsView(),
     ),
     BlocProvider(
@@ -146,3 +151,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+

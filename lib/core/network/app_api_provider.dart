@@ -14,14 +14,16 @@ class AppApiProvider implements ITicketsApiProvider{
   final Dio _dio;
 
   @override
-  Future<List<MusicOfferDto>> getMusicOffer() async {
+  Future<MusicOfferDto> getMusicOffer() async {
     try {
-      final response = await _dio.get<List<dynamic>>(
-        url,
-      );
-      final data = response.data?.cast<Map<String, dynamic>>().toList() ?? [];
-      final offers = data.map(MusicOfferDto.fromJson).toList();
-      return offers;
+      final response = await _dio.get<Map<String, dynamic>>(url);
+      final data = response.data;
+      if (data != null) {
+        final musicOfferDto = MusicOfferDto.fromJson(data);
+        return musicOfferDto;
+      } else {
+        throw AppException(message: 'Invalid response data', internalMessage: 'Пришли неверные данные');
+      }
     } on DioException catch (e) {
       throw ServerException(e);
     } on Object catch (e) {

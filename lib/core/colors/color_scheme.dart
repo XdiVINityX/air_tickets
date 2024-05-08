@@ -66,7 +66,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         tetradicBackground = DarkColorPalette.denim,
         subtitle = DarkColorPalette.denim,
         divider = DarkColorPalette.graniteGray,
-        icons = DarkColorPalette.white,
+        icons = DarkColorPalette.quickSilver,
         primaryText = DarkColorPalette.white;
 
   final Color primary;

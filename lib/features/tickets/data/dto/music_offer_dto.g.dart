@@ -9,7 +9,7 @@ part of 'music_offer_dto.dart';
 MusicOfferDto _$MusicOfferDtoFromJson(Map<String, dynamic> json) =>
     MusicOfferDto(
       offers: (json['offers'] as List<dynamic>)
-          .map((e) => Offer.fromJson(e as Map<String, dynamic>))
+          .map((e) => OfferDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -18,24 +18,24 @@ Map<String, dynamic> _$MusicOfferDtoToJson(MusicOfferDto instance) =>
       'offers': instance.offers,
     };
 
-Offer _$OfferFromJson(Map<String, dynamic> json) => Offer(
+OfferDto _$OfferDtoFromJson(Map<String, dynamic> json) => OfferDto(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       town: json['town'] as String,
-      price: Price.fromJson(json['price'] as Map<String, dynamic>),
+      price: PriceDto.fromJson(json['price'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$OfferToJson(Offer instance) => <String, dynamic>{
+Map<String, dynamic> _$OfferDtoToJson(OfferDto instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'town': instance.town,
       'price': instance.price,
     };
 
-Price _$PriceFromJson(Map<String, dynamic> json) => Price(
+PriceDto _$PriceDtoFromJson(Map<String, dynamic> json) => PriceDto(
       value: (json['value'] as num).toInt(),
     );
 
-Map<String, dynamic> _$PriceToJson(Price instance) => <String, dynamic>{
+Map<String, dynamic> _$PriceDtoToJson(PriceDto instance) => <String, dynamic>{
       'value': instance.value,
     };

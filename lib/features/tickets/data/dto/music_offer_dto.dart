@@ -11,37 +11,37 @@ class MusicOfferDto {
   factory MusicOfferDto.fromJson(Map<String, dynamic> json) =>
       _$MusicOfferDtoFromJson(json);
 
-  final List<Offer> offers;
+  final List<OfferDto> offers;
 
   Map<String, dynamic> toJson() => _$MusicOfferDtoToJson(this);
 }
 
 @JsonSerializable()
-class Offer {
-  Offer({
+class OfferDto {
+  OfferDto({
     required this.id,
     required this.title,
     required this.town,
     required this.price,
   });
 
-  factory Offer.fromJson(Map<String, dynamic> json) => _$OfferFromJson(json);
+  factory OfferDto.fromJson(Map<String, dynamic> json) => _$OfferDtoFromJson(json);
   final int id;
   final String title;
   final String town;
-  final Price price;
+  final PriceDto price;
 
-  Map<String, dynamic> toJson() => _$OfferToJson(this);
+  Map<String, dynamic> toJson() => _$OfferDtoToJson(this);
 }
 
 @JsonSerializable()
-class Price {
-  Price({
+class PriceDto {
+  PriceDto({
     required this.value,
   });
 
-  factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
+  factory PriceDto.fromJson(Map<String, dynamic> json) => _$PriceDtoFromJson(json);
   final int value;
 
-  Map<String, dynamic> toJson() => _$PriceToJson(this);
+  Map<String, dynamic> toJson() => _$PriceDtoToJson(this);
 }
