@@ -6,7 +6,7 @@ import 'package:air_tickets/features/hotel/domain/bloc/hotel_bloc.dart';
 import 'package:air_tickets/features/hotel/presentation/view/hotel_view.dart';
 import 'package:air_tickets/features/tickets/data/repository/tickets_repository.dart';
 import 'package:air_tickets/features/tickets/domain/bloc/tickets_bloc.dart';
-import 'package:air_tickets/features/tickets/presentation/tickets_view.dart';
+import 'package:air_tickets/features/tickets/presentation/view/tickets_view.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final colors = AppColorScheme.of(context);
     final textStyles = AppTextTheme.of(context);
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colors.background,
       body: SafeArea(
         child: IndexedStack(
           index: _selectedIndex,
@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.black,
+        color: colors.background,
         height: 54,
         child: BottomNavigationBar(
           unselectedItemColor: colors.inactive,

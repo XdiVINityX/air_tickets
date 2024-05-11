@@ -14,6 +14,11 @@ sealed class TicketsState with _$TicketsState {
     required List<Offer> offers,
   }) = TicketsState$loadingSuccess;
 
+  // TODO(delete):
+  const factory TicketsState.test({
+  @Default([]) List<Offer> offers,
+}) = TicketsState$Test;
+
   const factory TicketsState.error({
     @Default([]) List<Offer> offers,
     required String message,

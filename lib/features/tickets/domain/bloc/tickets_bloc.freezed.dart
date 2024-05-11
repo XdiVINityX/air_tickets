@@ -288,6 +288,7 @@ mixin _$TicketsState {
     required TResult Function(List<Offer> offers) initial,
     required TResult Function(List<Offer> offers) loading,
     required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
     required TResult Function(List<Offer> offers, String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -296,6 +297,7 @@ mixin _$TicketsState {
     TResult? Function(List<Offer> offers)? initial,
     TResult? Function(List<Offer> offers)? loading,
     TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
     TResult? Function(List<Offer> offers, String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -304,6 +306,7 @@ mixin _$TicketsState {
     TResult Function(List<Offer> offers)? initial,
     TResult Function(List<Offer> offers)? loading,
     TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
     TResult Function(List<Offer> offers, String message)? error,
     required TResult orElse(),
   }) =>
@@ -313,6 +316,7 @@ mixin _$TicketsState {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -321,6 +325,7 @@ mixin _$TicketsState {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -329,6 +334,7 @@ mixin _$TicketsState {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) =>
@@ -451,6 +457,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     required TResult Function(List<Offer> offers) initial,
     required TResult Function(List<Offer> offers) loading,
     required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
     required TResult Function(List<Offer> offers, String message) error,
   }) {
     return initial(offers);
@@ -462,6 +469,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult? Function(List<Offer> offers)? initial,
     TResult? Function(List<Offer> offers)? loading,
     TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
     TResult? Function(List<Offer> offers, String message)? error,
   }) {
     return initial?.call(offers);
@@ -473,6 +481,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult Function(List<Offer> offers)? initial,
     TResult Function(List<Offer> offers)? loading,
     TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
     TResult Function(List<Offer> offers, String message)? error,
     required TResult orElse(),
   }) {
@@ -488,6 +497,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return initial(this);
@@ -499,6 +509,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return initial?.call(this);
@@ -510,6 +521,7 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -611,6 +623,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     required TResult Function(List<Offer> offers) initial,
     required TResult Function(List<Offer> offers) loading,
     required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
     required TResult Function(List<Offer> offers, String message) error,
   }) {
     return loading(offers);
@@ -622,6 +635,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult? Function(List<Offer> offers)? initial,
     TResult? Function(List<Offer> offers)? loading,
     TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
     TResult? Function(List<Offer> offers, String message)? error,
   }) {
     return loading?.call(offers);
@@ -633,6 +647,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult Function(List<Offer> offers)? initial,
     TResult Function(List<Offer> offers)? loading,
     TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
     TResult Function(List<Offer> offers, String message)? error,
     required TResult orElse(),
   }) {
@@ -648,6 +663,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return loading(this);
@@ -659,6 +675,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return loading?.call(this);
@@ -670,6 +687,7 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -771,6 +789,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     required TResult Function(List<Offer> offers) initial,
     required TResult Function(List<Offer> offers) loading,
     required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
     required TResult Function(List<Offer> offers, String message) error,
   }) {
     return loadingSuccess(offers);
@@ -782,6 +801,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult? Function(List<Offer> offers)? initial,
     TResult? Function(List<Offer> offers)? loading,
     TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
     TResult? Function(List<Offer> offers, String message)? error,
   }) {
     return loadingSuccess?.call(offers);
@@ -793,6 +813,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult Function(List<Offer> offers)? initial,
     TResult Function(List<Offer> offers)? loading,
     TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
     TResult Function(List<Offer> offers, String message)? error,
     required TResult orElse(),
   }) {
@@ -808,6 +829,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return loadingSuccess(this);
@@ -819,6 +841,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return loadingSuccess?.call(this);
@@ -830,6 +853,7 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -850,6 +874,171 @@ abstract class TicketsState$loadingSuccess implements TicketsState {
   @JsonKey(ignore: true)
   _$$TicketsState$loadingSuccessImplCopyWith<_$TicketsState$loadingSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TicketsState$TestImplCopyWith<$Res>
+    implements $TicketsStateCopyWith<$Res> {
+  factory _$$TicketsState$TestImplCopyWith(_$TicketsState$TestImpl value,
+          $Res Function(_$TicketsState$TestImpl) then) =
+      __$$TicketsState$TestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Offer> offers});
+}
+
+/// @nodoc
+class __$$TicketsState$TestImplCopyWithImpl<$Res>
+    extends _$TicketsStateCopyWithImpl<$Res, _$TicketsState$TestImpl>
+    implements _$$TicketsState$TestImplCopyWith<$Res> {
+  __$$TicketsState$TestImplCopyWithImpl(_$TicketsState$TestImpl _value,
+      $Res Function(_$TicketsState$TestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? offers = null,
+  }) {
+    return _then(_$TicketsState$TestImpl(
+      offers: null == offers
+          ? _value._offers
+          : offers // ignore: cast_nullable_to_non_nullable
+              as List<Offer>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TicketsState$TestImpl implements TicketsState$Test {
+  const _$TicketsState$TestImpl({final List<Offer> offers = const []})
+      : _offers = offers;
+
+  final List<Offer> _offers;
+  @override
+  @JsonKey()
+  List<Offer> get offers {
+    if (_offers is EqualUnmodifiableListView) return _offers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_offers);
+  }
+
+  @override
+  String toString() {
+    return 'TicketsState.test(offers: $offers)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TicketsState$TestImpl &&
+            const DeepCollectionEquality().equals(other._offers, _offers));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TicketsState$TestImplCopyWith<_$TicketsState$TestImpl> get copyWith =>
+      __$$TicketsState$TestImplCopyWithImpl<_$TicketsState$TestImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Offer> offers) initial,
+    required TResult Function(List<Offer> offers) loading,
+    required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
+    required TResult Function(List<Offer> offers, String message) error,
+  }) {
+    return test(offers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<Offer> offers)? initial,
+    TResult? Function(List<Offer> offers)? loading,
+    TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
+    TResult? Function(List<Offer> offers, String message)? error,
+  }) {
+    return test?.call(offers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Offer> offers)? initial,
+    TResult Function(List<Offer> offers)? loading,
+    TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
+    TResult Function(List<Offer> offers, String message)? error,
+    required TResult orElse(),
+  }) {
+    if (test != null) {
+      return test(offers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TicketsState$Initial value) initial,
+    required TResult Function(TicketsState$Loading value) loading,
+    required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
+    required TResult Function(TicketsState$Error value) error,
+  }) {
+    return test(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TicketsState$Initial value)? initial,
+    TResult? Function(TicketsState$Loading value)? loading,
+    TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
+    TResult? Function(TicketsState$Error value)? error,
+  }) {
+    return test?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TicketsState$Initial value)? initial,
+    TResult Function(TicketsState$Loading value)? loading,
+    TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
+    TResult Function(TicketsState$Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (test != null) {
+      return test(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TicketsState$Test implements TicketsState {
+  const factory TicketsState$Test({final List<Offer> offers}) =
+      _$TicketsState$TestImpl;
+
+  @override
+  List<Offer> get offers;
+  @override
+  @JsonKey(ignore: true)
+  _$$TicketsState$TestImplCopyWith<_$TicketsState$TestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -940,6 +1129,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     required TResult Function(List<Offer> offers) initial,
     required TResult Function(List<Offer> offers) loading,
     required TResult Function(List<Offer> offers) loadingSuccess,
+    required TResult Function(List<Offer> offers) test,
     required TResult Function(List<Offer> offers, String message) error,
   }) {
     return error(offers, message);
@@ -951,6 +1141,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult? Function(List<Offer> offers)? initial,
     TResult? Function(List<Offer> offers)? loading,
     TResult? Function(List<Offer> offers)? loadingSuccess,
+    TResult? Function(List<Offer> offers)? test,
     TResult? Function(List<Offer> offers, String message)? error,
   }) {
     return error?.call(offers, message);
@@ -962,6 +1153,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult Function(List<Offer> offers)? initial,
     TResult Function(List<Offer> offers)? loading,
     TResult Function(List<Offer> offers)? loadingSuccess,
+    TResult Function(List<Offer> offers)? test,
     TResult Function(List<Offer> offers, String message)? error,
     required TResult orElse(),
   }) {
@@ -977,6 +1169,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
+    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return error(this);
@@ -988,6 +1181,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return error?.call(this);
@@ -999,6 +1193,7 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
+    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {

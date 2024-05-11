@@ -81,4 +81,9 @@ abstract class DarkColorPalette {
   /// https://www.color-name.com/hex/F36E36
   static const Color lightSilver= Color(0xFFD9D9D9);
 
+  /// Dark Gunmetal
+  ///
+  /// https://www.color-name.com/hex/292824
+  static const Color darkGunmetal= Color(0xFF242529);
+
 }

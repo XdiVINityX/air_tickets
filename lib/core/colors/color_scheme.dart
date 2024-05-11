@@ -32,6 +32,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     required this.tetradicBackground,
     required this.subtitle,
     required this.divider,
+    required this.dividerSecondary,
     required this.icons,
     required this.primaryText,
   });
@@ -45,8 +46,8 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         surfaceSecondary = DarkColorPalette.white,
         onSurface = DarkColorPalette.white,
         background = DarkColorPalette.smokyBlack,
-        backgroundSecondary = DarkColorPalette.white,
-        backgroundTertiary = DarkColorPalette.white,
+        backgroundSecondary = DarkColorPalette.darkGunmetal,
+        backgroundTertiary = DarkColorPalette.darkGunmetal,
         onBackground = DarkColorPalette.white,
         onBackgroundSecondary = DarkColorPalette.white,
         danger = DarkColorPalette.white,
@@ -66,6 +67,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         tetradicBackground = DarkColorPalette.denim,
         subtitle = DarkColorPalette.denim,
         divider = DarkColorPalette.graniteGray,
+        dividerSecondary = DarkColorPalette.arsenic,
         icons = DarkColorPalette.quickSilver,
         primaryText = DarkColorPalette.white;
 
@@ -98,6 +100,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
   final Color skeletonTertiary;
   final Color subtitle;
   final Color divider;
+  final Color dividerSecondary;
   final Color icons;
   final Color primaryText;
 
@@ -132,6 +135,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     Color? tetradicBackground,
     Color? subtitle,
     Color? divider,
+    Color? dividerSecondary,
     Color? icons,
     Color? primaryText,
   }) =>
@@ -167,6 +171,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         tetradicBackground: tetradicBackground ?? this.tetradicBackground,
         subtitle: subtitle ?? this.subtitle,
         divider: divider ?? this.divider,
+        dividerSecondary: dividerSecondary ?? this. dividerSecondary,
         icons: icons ?? this.icons,
         primaryText: primaryText ?? this.primaryText,
       );
@@ -223,6 +228,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       divider: Color.lerp(divider, other.divider, t)!,
       icons: Color.lerp(icons, other.icons, t)!,
       primaryText: Color.lerp(primaryText, other.primaryText, t)!,
+      dividerSecondary: Color.lerp(dividerSecondary, other.dividerSecondary, t)!,
     );
   }
 

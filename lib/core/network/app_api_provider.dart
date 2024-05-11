@@ -4,7 +4,7 @@ import 'package:air_tickets/features/tickets/data/dto/music_offer_dto.dart';
 import 'package:air_tickets/features/tickets/data/source/network/tickets_api_provider.dart';
 import 'package:dio/dio.dart';
 
-const url = 'https://run.mocky.io/v3/00727197-24ae-48a0-bcb3-63eb35d7a9de';
+const url = 'https://run.mocky.io/v3/c41e5265-109c-4481-bdfa-20314f63ed42';
 
 class AppApiProvider implements ITicketsApiProvider{
   AppApiProvider({
