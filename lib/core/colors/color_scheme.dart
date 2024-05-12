@@ -20,7 +20,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     required this.onDanger,
     required this.textField,
     required this.textFieldLabel,
-    required this.textFieldHelper,
+    required this.textHint,
     required this.frameTextFieldSecondary,
     required this.inactive,
     required this.positive,
@@ -34,6 +34,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     required this.divider,
     required this.dividerSecondary,
     required this.icons,
+    required this.iconPathBox,
+    required this.iconBallBox,
+    required this.iconCalendarBox,
+    required this.iconFireBox,
     required this.primaryText,
   });
 
@@ -55,7 +59,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         onDanger = DarkColorPalette.white,
         textField = DarkColorPalette.white,
         textFieldLabel = DarkColorPalette.white,
-        textFieldHelper = DarkColorPalette.white,
+        textHint = DarkColorPalette.graniteGray,
         frameTextFieldSecondary = DarkColorPalette.white,
         inactive = DarkColorPalette.quickSilver,
         positive = DarkColorPalette.white,
@@ -69,6 +73,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         divider = DarkColorPalette.graniteGray,
         dividerSecondary = DarkColorPalette.arsenic,
         icons = DarkColorPalette.quickSilver,
+        iconPathBox = DarkColorPalette.deepMossGreen,
+        iconBallBox = DarkColorPalette.denim,
+        iconCalendarBox = DarkColorPalette.darkCerulean,
+        iconFireBox = DarkColorPalette.sunsetOrange,
         primaryText = DarkColorPalette.white;
 
   final Color primary;
@@ -89,7 +97,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
   final Color onDanger;
   final Color textField;
   final Color textFieldLabel;
-  final Color textFieldHelper;
+  final Color textHint;
   final Color frameTextFieldSecondary;
   final Color inactive;
   final Color positive;
@@ -102,6 +110,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
   final Color divider;
   final Color dividerSecondary;
   final Color icons;
+  final Color iconPathBox;
+  final Color iconBallBox;
+  final Color iconCalendarBox;
+  final Color iconFireBox;
   final Color primaryText;
 
   @override
@@ -137,6 +149,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
     Color? divider,
     Color? dividerSecondary,
     Color? icons,
+    Color? iconPathBox,
+    Color? iconBallBox,
+    Color? iconCalendarBox,
+    Color? iconFireBox,
     Color? primaryText,
   }) =>
       AppColorScheme._(
@@ -158,7 +174,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         backgroundTertiary: backgroundTertiary ?? this.backgroundTertiary,
         textField: textField ?? this.textField,
         textFieldLabel: textFieldLabel ?? this.textFieldLabel,
-        textFieldHelper: textFieldHelper ?? this.textFieldHelper,
+        textHint: textFieldHelper ?? this.textHint,
         frameTextFieldSecondary:
             frameTextFieldSecondary ?? this.frameTextFieldSecondary,
         inactive: inactive ?? this.inactive,
@@ -171,9 +187,13 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         tetradicBackground: tetradicBackground ?? this.tetradicBackground,
         subtitle: subtitle ?? this.subtitle,
         divider: divider ?? this.divider,
-        dividerSecondary: dividerSecondary ?? this. dividerSecondary,
+        dividerSecondary: dividerSecondary ?? this.dividerSecondary,
         icons: icons ?? this.icons,
         primaryText: primaryText ?? this.primaryText,
+        iconPathBox: iconPathBox ?? this.iconPathBox,
+        iconBallBox: iconBallBox ?? this.iconBallBox,
+        iconCalendarBox: iconCalendarBox ?? this.iconCalendarBox,
+        iconFireBox: iconCalendarBox ?? this.iconCalendarBox,
       );
 
   @override
@@ -206,7 +226,7 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       onDanger: Color.lerp(onDanger, other.onDanger, t)!,
       textField: Color.lerp(textField, other.textField, t)!,
       textFieldLabel: Color.lerp(textFieldLabel, other.textFieldLabel, t)!,
-      textFieldHelper: Color.lerp(textFieldHelper, other.textFieldHelper, t)!,
+      textHint: Color.lerp(textHint, other.textHint, t)!,
       frameTextFieldSecondary: Color.lerp(
         frameTextFieldSecondary,
         other.frameTextFieldSecondary,
@@ -228,7 +248,12 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
       divider: Color.lerp(divider, other.divider, t)!,
       icons: Color.lerp(icons, other.icons, t)!,
       primaryText: Color.lerp(primaryText, other.primaryText, t)!,
-      dividerSecondary: Color.lerp(dividerSecondary, other.dividerSecondary, t)!,
+      dividerSecondary:
+          Color.lerp(dividerSecondary, other.dividerSecondary, t)!,
+      iconPathBox: Color.lerp(iconPathBox, other.iconPathBox, t)!,
+      iconBallBox: Color.lerp(iconBallBox, other.iconBallBox, t)!,
+      iconCalendarBox: Color.lerp(iconCalendarBox, other.iconCalendarBox, t)!,
+      iconFireBox: Color.lerp(iconFireBox, other.iconFireBox, t)!,
     );
   }
 

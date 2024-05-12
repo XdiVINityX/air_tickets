@@ -5,6 +5,7 @@ import 'package:air_tickets/features/tickets/presentation/widget/from_custom_tex
 import 'package:air_tickets/features/tickets/presentation/widget/to_custom_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TicketsModalDetail extends StatelessWidget {
@@ -22,69 +23,73 @@ class TicketsModalDetail extends StatelessWidget {
           topRight: Radius.circular(16),
         ),
       ),
-      child: const SizedBox(
+      child: SizedBox(
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 16,
-            ),
-            TopLane(),
-            SizedBox(
-              height: 24,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: FrameFromTo(),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 16, right: 18),
-              child: SizedBox(
-                height: 90,
-                child: Row(
-                  children: [
-                    HelpIcon(
-                      color: Colors.blue,
-                      assetNameIcon: SvgIcons.path,
-                      title: 'Сложный маршрут',
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    SizedBox(
-                      // TODO(be79): work when width 82, mb need to change text style
-                      width: 82,
-                      child: HelpIcon(
-                        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 16,
+              ),
+              const TopLane(),
+              const SizedBox(
+                height: 24,
+              ),
+              const FrameFromTo(),
+              const SizedBox(
+                height: 24,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 2),
+                child: SizedBox(
+                  height: 90,
+                  child: Row(
+                    children: [
+                      HelpIcon(
+                        color: colors.iconPathBox,
                         assetNameIcon: SvgIcons.path,
-                        title: 'Куда угодно',
+                        title: 'Сложный маршрут',
                       ),
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    HelpIcon(
-                      color: Colors.black,
-                      assetNameIcon: SvgIcons.path,
-                      title: 'Выходные',
-                    ),
-                    SizedBox(
-                      width: 16,
-                    ),
-                    HelpIcon(
-                      color: Colors.black,
-                      assetNameIcon: SvgIcons.path,
-                      title: 'Горячие билеты',
-                    ),
-                  ],
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      SizedBox(
+                        // TODO(be79): work when width 82, mb need to change text style
+                        width: 82,
+                        child: HelpIcon(
+                          color: colors.iconBallBox,
+                          assetNameIcon: SvgIcons.ball,
+                          title: 'Куда угодно',
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      HelpIcon(
+                        color: colors.iconCalendarBox,
+                        assetNameIcon: SvgIcons.calendar,
+                        title: 'Выходные',
+                      ),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      HelpIcon(
+                        color: colors.iconFireBox,
+                        assetNameIcon: SvgIcons.fire,
+                        title: 'Горячие билеты',
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              const SizedBox(
+                height: 30,
+              ),
+              const PopularDestinations(),
+            ],
+          ),
         ),
       ),
     );
@@ -202,9 +207,7 @@ class HelpIcon extends StatelessWidget {
                 color: color,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: SizedBox(
-                height: 24,
-                width: 24,
+              child: Center(
                 child: SvgPicture.asset(
                   assetNameIcon,
                   height: 24,
@@ -220,6 +223,136 @@ class HelpIcon extends StatelessWidget {
             title,
             style: textStyles.regular14.apply(color: colors.primaryText),
             textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/*8 - рекомендации мест прибытия. Хардкод согласно макету. Элементы кликабельны.
+При выборе в поле ввода места прибытия проставляется название соотв. города.*/
+class PopularDestinations extends StatelessWidget {
+  const PopularDestinations({super.key});
+
+  String _getImagePath(int id) {
+    switch (id) {
+      case 1:
+        return 'assets/images/stambul.png';
+      case 2:
+        return 'assets/images/sochi.png';
+      case 3:
+        return 'assets/images/phuket.png';
+      default:
+        return 'assets/images/sochi.png';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final color = AppColorScheme.of(context);
+
+    final destinations = [
+      {'title': 'Стамбул', 'id': 1},
+      {'title': 'Сочи', 'id': 2},
+      {'title': 'Пхукет', 'id': 3},
+    ];
+
+    return SizedBox(
+      width: double.infinity,
+      height: 216,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color.primary,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 8, bottom: 8, left: 16, right: 16),
+          child: ListView.builder(
+            itemCount: destinations.length,
+            itemBuilder: (context, index) {
+              final destination = destinations[index];
+              return Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: PopularDestinationsItem(
+                  title: destination['title'].toString(),
+                  imagePath: _getImagePath(destination['id']! as int),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class PopularDestinationsItem extends StatelessWidget {
+  const PopularDestinationsItem({
+    super.key,
+    required this.title,
+    required this.imagePath,
+  });
+
+  final String title;
+  final String imagePath;
+
+  @override
+  Widget build(BuildContext context) {
+    final textStyles = AppTextTheme.of(context);
+    final colors = AppColorScheme.of(context);
+    return SizedBox(
+      height: 56,
+      width: double.infinity,
+      child: Column(
+        children: [
+          //отступ сверху
+          const SizedBox(
+            height: 8,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                height: 40,
+                width: 40,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(6)),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 8,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style:
+                        textStyles.semibold16.apply(color: colors.primaryText),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    'Популярное направление',
+                    style: textStyles.regular14.apply(color: colors.textHint),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          //отступ снизу
+          const SizedBox(
+            height: 7,
+          ),
+          Divider(
+            color: colors.dividerSecondary,
+            height: 1,
           ),
         ],
       ),
