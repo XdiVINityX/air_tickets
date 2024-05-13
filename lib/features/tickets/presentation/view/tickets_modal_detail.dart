@@ -1,11 +1,11 @@
 import 'package:air_tickets/core/assets/res/svg_icons.dart';
 import 'package:air_tickets/core/assets/text/text_theme.dart';
 import 'package:air_tickets/core/colors/color_scheme.dart';
+import 'package:air_tickets/features/tickets/domain/bloc/tickets_bloc.dart';
 import 'package:air_tickets/features/tickets/presentation/widget/from_custom_text_field.dart';
 import 'package:air_tickets/features/tickets/presentation/widget/to_custom_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TicketsModalDetail extends StatelessWidget {
@@ -37,7 +37,8 @@ class TicketsModalDetail extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              const FrameFromTo(),
+              BlocBuilder<TicketsBloc, TicketsState>(
+                  builder: (context, state) => const FrameFromTo(),),
               const SizedBox(
                 height: 24,
               ),
@@ -115,14 +116,26 @@ class TopLane extends StatelessWidget {
   }
 }
 
-class FrameFromTo extends StatelessWidget {
+class FrameFromTo extends StatefulWidget {
   const FrameFromTo({super.key});
+
+  @override
+  State<FrameFromTo> createState() => _FrameFromToState();
+}
+
+class _FrameFromToState extends State<FrameFromTo> {
+  void _inputDestinationChanged(String query) {
+    context
+        .read<TicketsBloc>()
+        .add(TicketsEvent.inputDestinationChanged(query));
+  }
 
   @override
   Widget build(BuildContext context) {
     final colors = AppColorScheme.of(context);
     final textStyles = AppTextTheme.of(context);
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
           width: double.infinity,
@@ -143,8 +156,16 @@ class FrameFromTo extends StatelessWidget {
                       const SizedBox(
                         width: 8,
                       ),
-                      const Expanded(
-                        child: FromCustomTextField(),
+                      Expanded(
+                        child: BlocBuilder<TicketsBloc, TicketsState>(
+                          buildWhen: (previous, current) =>
+                              previous.queryDestination !=
+                              current.queryDestination,
+                          builder: (context, state) => FromCustomTextField(
+                            onChanged: _inputDestinationChanged,
+                            destinationQuery: state.queryDestination,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -160,8 +181,11 @@ class FrameFromTo extends StatelessWidget {
                         const SizedBox(
                           width: 8,
                         ),
-                        const Expanded(
-                          child: ToCustomTextField(),
+                        Expanded(
+                          child: ToCustomTextField(
+                            autofocus: true,
+                            onPressed: () {},
+                          ),
                         ),
                         const Spacer(),
                         SvgPicture.asset(SvgIcons.cross),

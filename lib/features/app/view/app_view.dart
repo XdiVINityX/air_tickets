@@ -2,6 +2,7 @@ import 'package:air_tickets/core/assets/res/svg_icons.dart';
 import 'package:air_tickets/core/assets/text/text_theme.dart';
 import 'package:air_tickets/core/colors/color_scheme.dart';
 import 'package:air_tickets/core/network/app_api_provider.dart';
+import 'package:air_tickets/features/app/source/local/shared_preferences.dart';
 import 'package:air_tickets/features/hotel/domain/bloc/hotel_bloc.dart';
 import 'package:air_tickets/features/hotel/presentation/view/hotel_view.dart';
 import 'package:air_tickets/features/tickets/data/repository/tickets_repository.dart';
@@ -11,6 +12,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AppView extends StatefulWidget {
   const AppView({super.key});
@@ -62,9 +64,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static final List<Widget> _widgetOptions = [
     BlocProvider(
-      create: (context) => TicketsBloc(
-        repository: TicketsRepository(apiProvider: AppApiProvider(dio: Dio())),
-      )..add(const TicketsEvent$Initial()),
+      create: (context) {
+        final TicketsRepository repository = TicketsRepository(
+            apiProvider: AppApiProvider(dio: Dio()),
+            sharedPreferences: SharedPreferencesHelper().sharedPreferences,);
+        return TicketsBloc(
+          repository: repository,
+        )..add(const TicketsEvent$Initial());
+      },
       child: const TicketsView(),
     ),
     BlocProvider(
@@ -151,5 +158,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-

@@ -19,12 +19,27 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
     on<TicketsEvent>(
       (event, emitter) => switch (event) {
         final TicketsEvent$Initial event => _initial(emitter, event),
+        //TODO: Handle this case
         final TicketsEvent$Loading event => throw UnimplementedError(),
+        final InputDestination$Changed event =>
+          _saveInputDestination(event, emitter),
       },
     );
   }
 
   final ITicketsRepository _repository;
+
+  Future<void> _saveInputDestination(
+    InputDestination$Changed event,
+    Emitter<TicketsState> emitter,
+  ) async {
+    emitter(state.copyWith(queryDestination: event.query));
+    await _repository.saveFlyFromPreferences(event.query);
+  }
+
+
+  Future<String?> _getInputDestination() async =>
+      _repository.getFlyFromPreferences();
 
   Future<void> _initial(
     Emitter<TicketsState> emitter,
@@ -33,17 +48,18 @@ class TicketsBloc extends Bloc<TicketsEvent, TicketsState> {
     try {
       emitter(const TicketsState$Loading());
       final data = await _repository.getMusicOffer();
-      emitter(TicketsState$loadingSuccess(offers: data.offers));
+      final destinationQuery = await _getInputDestination();
+      emitter(
+        TicketsState$loadingSuccess(
+          offers: data.offers,
+          queryDestination: destinationQuery,
+        ),
+      );
     } on ServerException catch (e, s) {
       debugPrint('ServerException: ${e.message}');
       debugPrint('ServerException: $s');
       debugPrint('Internal Message: ${e.internalMessage}');
       emitter(TicketsState$Error(message: e.message));
-
-      // TODO(Delete):
-      emitter(TicketsState$Test());
-
-
     } on AppException catch (e) {
       emitter(TicketsState$Error(message: e.message));
       debugPrint('AppException: ${e.message}');

@@ -4,23 +4,22 @@ part of 'tickets_bloc.dart';
 sealed class TicketsState with _$TicketsState {
   const factory TicketsState.initial({
     @Default([]) List<Offer> offers,
+    @Default('') String? queryDestination,
   }) = TicketsState$Initial;
 
   const factory TicketsState.loading({
-    @Default([])  List<Offer> offers,
+    @Default([]) List<Offer> offers,
+    @Default('') String? queryDestination,
   }) = TicketsState$Loading;
 
   const factory TicketsState.loadingSuccess({
     required List<Offer> offers,
+    @Default('') String? queryDestination,
   }) = TicketsState$loadingSuccess;
-
-  // TODO(delete):
-  const factory TicketsState.test({
-  @Default([]) List<Offer> offers,
-}) = TicketsState$Test;
 
   const factory TicketsState.error({
     @Default([]) List<Offer> offers,
+    @Default('') String? queryDestination,
     required String message,
   }) = TicketsState$Error;
 }

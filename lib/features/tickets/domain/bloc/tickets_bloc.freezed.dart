@@ -20,18 +20,21 @@ mixin _$TicketsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(String query) inputDestinationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(String query)? inputDestinationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(String query)? inputDestinationChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,22 @@ mixin _$TicketsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(TicketsEvent$Initial value) initial,
     required TResult Function(TicketsEvent$Loading value) loading,
+    required TResult Function(InputDestination$Changed value)
+        inputDestinationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TicketsEvent$Initial value)? initial,
     TResult? Function(TicketsEvent$Loading value)? loading,
+    TResult? Function(InputDestination$Changed value)? inputDestinationChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TicketsEvent$Initial value)? initial,
     TResult Function(TicketsEvent$Loading value)? loading,
+    TResult Function(InputDestination$Changed value)? inputDestinationChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,6 +122,7 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(String query) inputDestinationChanged,
   }) {
     return initial();
   }
@@ -124,6 +132,7 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(String query)? inputDestinationChanged,
   }) {
     return initial?.call();
   }
@@ -133,6 +142,7 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(String query)? inputDestinationChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -146,6 +156,8 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(TicketsEvent$Initial value) initial,
     required TResult Function(TicketsEvent$Loading value) loading,
+    required TResult Function(InputDestination$Changed value)
+        inputDestinationChanged,
   }) {
     return initial(this);
   }
@@ -155,6 +167,7 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TicketsEvent$Initial value)? initial,
     TResult? Function(TicketsEvent$Loading value)? loading,
+    TResult? Function(InputDestination$Changed value)? inputDestinationChanged,
   }) {
     return initial?.call(this);
   }
@@ -164,6 +177,7 @@ class _$TicketsEvent$InitialImpl implements TicketsEvent$Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TicketsEvent$Initial value)? initial,
     TResult Function(TicketsEvent$Loading value)? loading,
+    TResult Function(InputDestination$Changed value)? inputDestinationChanged,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -218,6 +232,7 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(String query) inputDestinationChanged,
   }) {
     return loading();
   }
@@ -227,6 +242,7 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(String query)? inputDestinationChanged,
   }) {
     return loading?.call();
   }
@@ -236,6 +252,7 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(String query)? inputDestinationChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -249,6 +266,8 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(TicketsEvent$Initial value) initial,
     required TResult Function(TicketsEvent$Loading value) loading,
+    required TResult Function(InputDestination$Changed value)
+        inputDestinationChanged,
   }) {
     return loading(this);
   }
@@ -258,6 +277,7 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TicketsEvent$Initial value)? initial,
     TResult? Function(TicketsEvent$Loading value)? loading,
+    TResult? Function(InputDestination$Changed value)? inputDestinationChanged,
   }) {
     return loading?.call(this);
   }
@@ -267,6 +287,7 @@ class _$TicketsEvent$LoadingImpl implements TicketsEvent$Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TicketsEvent$Initial value)? initial,
     TResult Function(TicketsEvent$Loading value)? loading,
+    TResult Function(InputDestination$Changed value)? inputDestinationChanged,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -281,33 +302,186 @@ abstract class TicketsEvent$Loading implements TicketsEvent {
 }
 
 /// @nodoc
-mixin _$TicketsState {
-  List<Offer> get offers => throw _privateConstructorUsedError;
+abstract class _$$InputDestination$ChangedImplCopyWith<$Res> {
+  factory _$$InputDestination$ChangedImplCopyWith(
+          _$InputDestination$ChangedImpl value,
+          $Res Function(_$InputDestination$ChangedImpl) then) =
+      __$$InputDestination$ChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String query});
+}
+
+/// @nodoc
+class __$$InputDestination$ChangedImplCopyWithImpl<$Res>
+    extends _$TicketsEventCopyWithImpl<$Res, _$InputDestination$ChangedImpl>
+    implements _$$InputDestination$ChangedImplCopyWith<$Res> {
+  __$$InputDestination$ChangedImplCopyWithImpl(
+      _$InputDestination$ChangedImpl _value,
+      $Res Function(_$InputDestination$ChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? query = null,
+  }) {
+    return _then(_$InputDestination$ChangedImpl(
+      null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InputDestination$ChangedImpl implements InputDestination$Changed {
+  const _$InputDestination$ChangedImpl(this.query);
+
+  @override
+  final String query;
+
+  @override
+  String toString() {
+    return 'TicketsEvent.inputDestinationChanged(query: $query)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InputDestination$ChangedImpl &&
+            (identical(other.query, query) || other.query == query));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, query);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InputDestination$ChangedImplCopyWith<_$InputDestination$ChangedImpl>
+      get copyWith => __$$InputDestination$ChangedImplCopyWithImpl<
+          _$InputDestination$ChangedImpl>(this, _$identity);
+
+  @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String query) inputDestinationChanged,
+  }) {
+    return inputDestinationChanged(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String query)? inputDestinationChanged,
+  }) {
+    return inputDestinationChanged?.call(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String query)? inputDestinationChanged,
+    required TResult orElse(),
+  }) {
+    if (inputDestinationChanged != null) {
+      return inputDestinationChanged(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TicketsEvent$Initial value) initial,
+    required TResult Function(TicketsEvent$Loading value) loading,
+    required TResult Function(InputDestination$Changed value)
+        inputDestinationChanged,
+  }) {
+    return inputDestinationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(TicketsEvent$Initial value)? initial,
+    TResult? Function(TicketsEvent$Loading value)? loading,
+    TResult? Function(InputDestination$Changed value)? inputDestinationChanged,
+  }) {
+    return inputDestinationChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TicketsEvent$Initial value)? initial,
+    TResult Function(TicketsEvent$Loading value)? loading,
+    TResult Function(InputDestination$Changed value)? inputDestinationChanged,
+    required TResult orElse(),
+  }) {
+    if (inputDestinationChanged != null) {
+      return inputDestinationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InputDestination$Changed implements TicketsEvent {
+  const factory InputDestination$Changed(final String query) =
+      _$InputDestination$ChangedImpl;
+
+  String get query;
+  @JsonKey(ignore: true)
+  _$$InputDestination$ChangedImplCopyWith<_$InputDestination$ChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$TicketsState {
+  List<Offer> get offers => throw _privateConstructorUsedError;
+  String? get queryDestination => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        initial,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loading,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loadingSuccess,
+    required TResult Function(
+            List<Offer> offers, String? queryDestination, String message)
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
+    TResult? Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult? Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult? Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult? Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
+    TResult Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -316,7 +490,6 @@ mixin _$TicketsState {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -325,7 +498,6 @@ mixin _$TicketsState {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -334,7 +506,6 @@ mixin _$TicketsState {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) =>
@@ -351,7 +522,7 @@ abstract class $TicketsStateCopyWith<$Res> {
           TicketsState value, $Res Function(TicketsState) then) =
       _$TicketsStateCopyWithImpl<$Res, TicketsState>;
   @useResult
-  $Res call({List<Offer> offers});
+  $Res call({List<Offer> offers, String? queryDestination});
 }
 
 /// @nodoc
@@ -368,12 +539,17 @@ class _$TicketsStateCopyWithImpl<$Res, $Val extends TicketsState>
   @override
   $Res call({
     Object? offers = null,
+    Object? queryDestination = freezed,
   }) {
     return _then(_value.copyWith(
       offers: null == offers
           ? _value.offers
           : offers // ignore: cast_nullable_to_non_nullable
               as List<Offer>,
+      queryDestination: freezed == queryDestination
+          ? _value.queryDestination
+          : queryDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -386,7 +562,7 @@ abstract class _$$TicketsState$InitialImplCopyWith<$Res>
       __$$TicketsState$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Offer> offers});
+  $Res call({List<Offer> offers, String? queryDestination});
 }
 
 /// @nodoc
@@ -401,12 +577,17 @@ class __$$TicketsState$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offers = null,
+    Object? queryDestination = freezed,
   }) {
     return _then(_$TicketsState$InitialImpl(
       offers: null == offers
           ? _value._offers
           : offers // ignore: cast_nullable_to_non_nullable
               as List<Offer>,
+      queryDestination: freezed == queryDestination
+          ? _value.queryDestination
+          : queryDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -414,7 +595,8 @@ class __$$TicketsState$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TicketsState$InitialImpl implements TicketsState$Initial {
-  const _$TicketsState$InitialImpl({final List<Offer> offers = const []})
+  const _$TicketsState$InitialImpl(
+      {final List<Offer> offers = const [], this.queryDestination = ''})
       : _offers = offers;
 
   final List<Offer> _offers;
@@ -427,8 +609,12 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
   }
 
   @override
+  @JsonKey()
+  final String? queryDestination;
+
+  @override
   String toString() {
-    return 'TicketsState.initial(offers: $offers)';
+    return 'TicketsState.initial(offers: $offers, queryDestination: $queryDestination)';
   }
 
   @override
@@ -436,12 +622,14 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TicketsState$InitialImpl &&
-            const DeepCollectionEquality().equals(other._offers, _offers));
+            const DeepCollectionEquality().equals(other._offers, _offers) &&
+            (identical(other.queryDestination, queryDestination) ||
+                other.queryDestination == queryDestination));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_offers), queryDestination);
 
   @JsonKey(ignore: true)
   @override
@@ -454,39 +642,47 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        initial,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loading,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loadingSuccess,
+    required TResult Function(
+            List<Offer> offers, String? queryDestination, String message)
+        error,
   }) {
-    return initial(offers);
+    return initial(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
+    TResult? Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult? Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult? Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult? Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
   }) {
-    return initial?.call(offers);
+    return initial?.call(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
+    TResult Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(offers);
+      return initial(offers, queryDestination);
     }
     return orElse();
   }
@@ -497,7 +693,6 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return initial(this);
@@ -509,7 +704,6 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return initial?.call(this);
@@ -521,7 +715,6 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -533,11 +726,14 @@ class _$TicketsState$InitialImpl implements TicketsState$Initial {
 }
 
 abstract class TicketsState$Initial implements TicketsState {
-  const factory TicketsState$Initial({final List<Offer> offers}) =
-      _$TicketsState$InitialImpl;
+  const factory TicketsState$Initial(
+      {final List<Offer> offers,
+      final String? queryDestination}) = _$TicketsState$InitialImpl;
 
   @override
   List<Offer> get offers;
+  @override
+  String? get queryDestination;
   @override
   @JsonKey(ignore: true)
   _$$TicketsState$InitialImplCopyWith<_$TicketsState$InitialImpl>
@@ -552,7 +748,7 @@ abstract class _$$TicketsState$LoadingImplCopyWith<$Res>
       __$$TicketsState$LoadingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Offer> offers});
+  $Res call({List<Offer> offers, String? queryDestination});
 }
 
 /// @nodoc
@@ -567,12 +763,17 @@ class __$$TicketsState$LoadingImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offers = null,
+    Object? queryDestination = freezed,
   }) {
     return _then(_$TicketsState$LoadingImpl(
       offers: null == offers
           ? _value._offers
           : offers // ignore: cast_nullable_to_non_nullable
               as List<Offer>,
+      queryDestination: freezed == queryDestination
+          ? _value.queryDestination
+          : queryDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -580,7 +781,8 @@ class __$$TicketsState$LoadingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TicketsState$LoadingImpl implements TicketsState$Loading {
-  const _$TicketsState$LoadingImpl({final List<Offer> offers = const []})
+  const _$TicketsState$LoadingImpl(
+      {final List<Offer> offers = const [], this.queryDestination = ''})
       : _offers = offers;
 
   final List<Offer> _offers;
@@ -593,8 +795,12 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
   }
 
   @override
+  @JsonKey()
+  final String? queryDestination;
+
+  @override
   String toString() {
-    return 'TicketsState.loading(offers: $offers)';
+    return 'TicketsState.loading(offers: $offers, queryDestination: $queryDestination)';
   }
 
   @override
@@ -602,12 +808,14 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TicketsState$LoadingImpl &&
-            const DeepCollectionEquality().equals(other._offers, _offers));
+            const DeepCollectionEquality().equals(other._offers, _offers) &&
+            (identical(other.queryDestination, queryDestination) ||
+                other.queryDestination == queryDestination));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_offers), queryDestination);
 
   @JsonKey(ignore: true)
   @override
@@ -620,39 +828,47 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        initial,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loading,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loadingSuccess,
+    required TResult Function(
+            List<Offer> offers, String? queryDestination, String message)
+        error,
   }) {
-    return loading(offers);
+    return loading(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
+    TResult? Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult? Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult? Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult? Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
   }) {
-    return loading?.call(offers);
+    return loading?.call(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
+    TResult Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(offers);
+      return loading(offers, queryDestination);
     }
     return orElse();
   }
@@ -663,7 +879,6 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return loading(this);
@@ -675,7 +890,6 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return loading?.call(this);
@@ -687,7 +901,6 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -699,11 +912,14 @@ class _$TicketsState$LoadingImpl implements TicketsState$Loading {
 }
 
 abstract class TicketsState$Loading implements TicketsState {
-  const factory TicketsState$Loading({final List<Offer> offers}) =
-      _$TicketsState$LoadingImpl;
+  const factory TicketsState$Loading(
+      {final List<Offer> offers,
+      final String? queryDestination}) = _$TicketsState$LoadingImpl;
 
   @override
   List<Offer> get offers;
+  @override
+  String? get queryDestination;
   @override
   @JsonKey(ignore: true)
   _$$TicketsState$LoadingImplCopyWith<_$TicketsState$LoadingImpl>
@@ -719,7 +935,7 @@ abstract class _$$TicketsState$loadingSuccessImplCopyWith<$Res>
       __$$TicketsState$loadingSuccessImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Offer> offers});
+  $Res call({List<Offer> offers, String? queryDestination});
 }
 
 /// @nodoc
@@ -735,12 +951,17 @@ class __$$TicketsState$loadingSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offers = null,
+    Object? queryDestination = freezed,
   }) {
     return _then(_$TicketsState$loadingSuccessImpl(
       offers: null == offers
           ? _value._offers
           : offers // ignore: cast_nullable_to_non_nullable
               as List<Offer>,
+      queryDestination: freezed == queryDestination
+          ? _value.queryDestination
+          : queryDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -748,7 +969,8 @@ class __$$TicketsState$loadingSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
-  const _$TicketsState$loadingSuccessImpl({required final List<Offer> offers})
+  const _$TicketsState$loadingSuccessImpl(
+      {required final List<Offer> offers, this.queryDestination = ''})
       : _offers = offers;
 
   final List<Offer> _offers;
@@ -760,8 +982,12 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
   }
 
   @override
+  @JsonKey()
+  final String? queryDestination;
+
+  @override
   String toString() {
-    return 'TicketsState.loadingSuccess(offers: $offers)';
+    return 'TicketsState.loadingSuccess(offers: $offers, queryDestination: $queryDestination)';
   }
 
   @override
@@ -769,12 +995,14 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TicketsState$loadingSuccessImpl &&
-            const DeepCollectionEquality().equals(other._offers, _offers));
+            const DeepCollectionEquality().equals(other._offers, _offers) &&
+            (identical(other.queryDestination, queryDestination) ||
+                other.queryDestination == queryDestination));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_offers), queryDestination);
 
   @JsonKey(ignore: true)
   @override
@@ -786,39 +1014,47 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        initial,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loading,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loadingSuccess,
+    required TResult Function(
+            List<Offer> offers, String? queryDestination, String message)
+        error,
   }) {
-    return loadingSuccess(offers);
+    return loadingSuccess(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
+    TResult? Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult? Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult? Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult? Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
   }) {
-    return loadingSuccess?.call(offers);
+    return loadingSuccess?.call(offers, queryDestination);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
+    TResult Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
     required TResult orElse(),
   }) {
     if (loadingSuccess != null) {
-      return loadingSuccess(offers);
+      return loadingSuccess(offers, queryDestination);
     }
     return orElse();
   }
@@ -829,7 +1065,6 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return loadingSuccess(this);
@@ -841,7 +1076,6 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return loadingSuccess?.call(this);
@@ -853,7 +1087,6 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -866,179 +1099,17 @@ class _$TicketsState$loadingSuccessImpl implements TicketsState$loadingSuccess {
 
 abstract class TicketsState$loadingSuccess implements TicketsState {
   const factory TicketsState$loadingSuccess(
-      {required final List<Offer> offers}) = _$TicketsState$loadingSuccessImpl;
+      {required final List<Offer> offers,
+      final String? queryDestination}) = _$TicketsState$loadingSuccessImpl;
 
   @override
   List<Offer> get offers;
+  @override
+  String? get queryDestination;
   @override
   @JsonKey(ignore: true)
   _$$TicketsState$loadingSuccessImplCopyWith<_$TicketsState$loadingSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$TicketsState$TestImplCopyWith<$Res>
-    implements $TicketsStateCopyWith<$Res> {
-  factory _$$TicketsState$TestImplCopyWith(_$TicketsState$TestImpl value,
-          $Res Function(_$TicketsState$TestImpl) then) =
-      __$$TicketsState$TestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<Offer> offers});
-}
-
-/// @nodoc
-class __$$TicketsState$TestImplCopyWithImpl<$Res>
-    extends _$TicketsStateCopyWithImpl<$Res, _$TicketsState$TestImpl>
-    implements _$$TicketsState$TestImplCopyWith<$Res> {
-  __$$TicketsState$TestImplCopyWithImpl(_$TicketsState$TestImpl _value,
-      $Res Function(_$TicketsState$TestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? offers = null,
-  }) {
-    return _then(_$TicketsState$TestImpl(
-      offers: null == offers
-          ? _value._offers
-          : offers // ignore: cast_nullable_to_non_nullable
-              as List<Offer>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$TicketsState$TestImpl implements TicketsState$Test {
-  const _$TicketsState$TestImpl({final List<Offer> offers = const []})
-      : _offers = offers;
-
-  final List<Offer> _offers;
-  @override
-  @JsonKey()
-  List<Offer> get offers {
-    if (_offers is EqualUnmodifiableListView) return _offers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_offers);
-  }
-
-  @override
-  String toString() {
-    return 'TicketsState.test(offers: $offers)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TicketsState$TestImpl &&
-            const DeepCollectionEquality().equals(other._offers, _offers));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_offers));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TicketsState$TestImplCopyWith<_$TicketsState$TestImpl> get copyWith =>
-      __$$TicketsState$TestImplCopyWithImpl<_$TicketsState$TestImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
-  }) {
-    return test(offers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
-  }) {
-    return test?.call(offers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
-    required TResult orElse(),
-  }) {
-    if (test != null) {
-      return test(offers);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(TicketsState$Initial value) initial,
-    required TResult Function(TicketsState$Loading value) loading,
-    required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
-    required TResult Function(TicketsState$Error value) error,
-  }) {
-    return test(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(TicketsState$Initial value)? initial,
-    TResult? Function(TicketsState$Loading value)? loading,
-    TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
-    TResult? Function(TicketsState$Error value)? error,
-  }) {
-    return test?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(TicketsState$Initial value)? initial,
-    TResult Function(TicketsState$Loading value)? loading,
-    TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
-    TResult Function(TicketsState$Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (test != null) {
-      return test(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TicketsState$Test implements TicketsState {
-  const factory TicketsState$Test({final List<Offer> offers}) =
-      _$TicketsState$TestImpl;
-
-  @override
-  List<Offer> get offers;
-  @override
-  @JsonKey(ignore: true)
-  _$$TicketsState$TestImplCopyWith<_$TicketsState$TestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1049,7 +1120,7 @@ abstract class _$$TicketsState$ErrorImplCopyWith<$Res>
       __$$TicketsState$ErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Offer> offers, String message});
+  $Res call({List<Offer> offers, String? queryDestination, String message});
 }
 
 /// @nodoc
@@ -1064,6 +1135,7 @@ class __$$TicketsState$ErrorImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? offers = null,
+    Object? queryDestination = freezed,
     Object? message = null,
   }) {
     return _then(_$TicketsState$ErrorImpl(
@@ -1071,6 +1143,10 @@ class __$$TicketsState$ErrorImplCopyWithImpl<$Res>
           ? _value._offers
           : offers // ignore: cast_nullable_to_non_nullable
               as List<Offer>,
+      queryDestination: freezed == queryDestination
+          ? _value.queryDestination
+          : queryDestination // ignore: cast_nullable_to_non_nullable
+              as String?,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -1083,7 +1159,9 @@ class __$$TicketsState$ErrorImplCopyWithImpl<$Res>
 
 class _$TicketsState$ErrorImpl implements TicketsState$Error {
   const _$TicketsState$ErrorImpl(
-      {final List<Offer> offers = const [], required this.message})
+      {final List<Offer> offers = const [],
+      this.queryDestination = '',
+      required this.message})
       : _offers = offers;
 
   final List<Offer> _offers;
@@ -1096,11 +1174,14 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
   }
 
   @override
+  @JsonKey()
+  final String? queryDestination;
+  @override
   final String message;
 
   @override
   String toString() {
-    return 'TicketsState.error(offers: $offers, message: $message)';
+    return 'TicketsState.error(offers: $offers, queryDestination: $queryDestination, message: $message)';
   }
 
   @override
@@ -1109,12 +1190,14 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
         (other.runtimeType == runtimeType &&
             other is _$TicketsState$ErrorImpl &&
             const DeepCollectionEquality().equals(other._offers, _offers) &&
+            (identical(other.queryDestination, queryDestination) ||
+                other.queryDestination == queryDestination) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_offers), message);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_offers), queryDestination, message);
 
   @JsonKey(ignore: true)
   @override
@@ -1126,39 +1209,47 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<Offer> offers) initial,
-    required TResult Function(List<Offer> offers) loading,
-    required TResult Function(List<Offer> offers) loadingSuccess,
-    required TResult Function(List<Offer> offers) test,
-    required TResult Function(List<Offer> offers, String message) error,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        initial,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loading,
+    required TResult Function(List<Offer> offers, String? queryDestination)
+        loadingSuccess,
+    required TResult Function(
+            List<Offer> offers, String? queryDestination, String message)
+        error,
   }) {
-    return error(offers, message);
+    return error(offers, queryDestination, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<Offer> offers)? initial,
-    TResult? Function(List<Offer> offers)? loading,
-    TResult? Function(List<Offer> offers)? loadingSuccess,
-    TResult? Function(List<Offer> offers)? test,
-    TResult? Function(List<Offer> offers, String message)? error,
+    TResult? Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult? Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult? Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult? Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
   }) {
-    return error?.call(offers, message);
+    return error?.call(offers, queryDestination, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<Offer> offers)? initial,
-    TResult Function(List<Offer> offers)? loading,
-    TResult Function(List<Offer> offers)? loadingSuccess,
-    TResult Function(List<Offer> offers)? test,
-    TResult Function(List<Offer> offers, String message)? error,
+    TResult Function(List<Offer> offers, String? queryDestination)? initial,
+    TResult Function(List<Offer> offers, String? queryDestination)? loading,
+    TResult Function(List<Offer> offers, String? queryDestination)?
+        loadingSuccess,
+    TResult Function(
+            List<Offer> offers, String? queryDestination, String message)?
+        error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(offers, message);
+      return error(offers, queryDestination, message);
     }
     return orElse();
   }
@@ -1169,7 +1260,6 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     required TResult Function(TicketsState$Initial value) initial,
     required TResult Function(TicketsState$Loading value) loading,
     required TResult Function(TicketsState$loadingSuccess value) loadingSuccess,
-    required TResult Function(TicketsState$Test value) test,
     required TResult Function(TicketsState$Error value) error,
   }) {
     return error(this);
@@ -1181,7 +1271,6 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult? Function(TicketsState$Initial value)? initial,
     TResult? Function(TicketsState$Loading value)? loading,
     TResult? Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult? Function(TicketsState$Test value)? test,
     TResult? Function(TicketsState$Error value)? error,
   }) {
     return error?.call(this);
@@ -1193,7 +1282,6 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
     TResult Function(TicketsState$Initial value)? initial,
     TResult Function(TicketsState$Loading value)? loading,
     TResult Function(TicketsState$loadingSuccess value)? loadingSuccess,
-    TResult Function(TicketsState$Test value)? test,
     TResult Function(TicketsState$Error value)? error,
     required TResult orElse(),
   }) {
@@ -1207,10 +1295,13 @@ class _$TicketsState$ErrorImpl implements TicketsState$Error {
 abstract class TicketsState$Error implements TicketsState {
   const factory TicketsState$Error(
       {final List<Offer> offers,
+      final String? queryDestination,
       required final String message}) = _$TicketsState$ErrorImpl;
 
   @override
   List<Offer> get offers;
+  @override
+  String? get queryDestination;
   String get message;
   @override
   @JsonKey(ignore: true)
